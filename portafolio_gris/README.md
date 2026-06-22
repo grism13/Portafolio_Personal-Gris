@@ -45,7 +45,7 @@ Pautas del profesor Ing. Hector Luna y de criterio propio
 Pinterest
 
 - **Recursos graficos**:
-*Barra de navegacion*: https://pub.dev/packages , *Avatar*: Affinity + canva ,
+*Barra de navegacion*: https://pub.dev/packages/curved_labeled_navigation_bar , *Avatar*: Affinity + canva ,
 *Fonts*: https://globalfonts.pro/font/avallon#google_vignette (Avallon), https://fonts.google.com/specimen/Yanone+Kaffeesatz (Yanone Kaffeesatz) , 
 
 

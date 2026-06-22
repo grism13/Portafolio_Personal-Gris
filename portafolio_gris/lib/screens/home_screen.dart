@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-//container ya con la imagen de las manitos
+
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 365),
                 Stack(
                   clipBehavior: Clip.none,
-                  children: [
+                   children: [
                     Container(
                       width: double.infinity,
                       height: 900,
@@ -45,9 +45,37 @@ class _HomeScreenState extends State<HomeScreen> {
                           topRight: Radius.circular(30),
                         ),
                       ),
-                      child: const Column(
+                      child: Column(
                         children: [
-                          SizedBox(height: 60),
+                          const SizedBox(height: 80), 
+                          
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'Grisangely',
+                                style: TextStyle(
+                                  fontFamily: 'Titulos',
+                                  fontSize: 100,
+                                  color: Color(0xFF1B2A47),
+                                  height: 0.3,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 100.0), 
+                                child: const Text(
+                                  'Martínez',
+                                  style: TextStyle(
+                                    fontFamily: 'Titulos',
+                                    fontSize: 80,
+                                    color: Color(0xFF1B2A47),
+                                    height: 1.5, 
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 30),
                         ],
                       ),
                     ),
@@ -71,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
 
-      //navigation bar
+
       bottomNavigationBar: CurvedNavigationBar(
         index: _selectedIndex,
         backgroundColor: const Color(0xFFD6F6F3),
@@ -86,25 +114,40 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           CurvedNavigationBarItem(
             child: Icon(FontAwesomeIcons.solidUser, color: Color(0xFFD6F6F3), size: 32),
-            label: 'PERFIL',
-            labelStyle: TextStyle(color: Color(0xFFD6F6F3)),
+            label: 'Perfil',
+            labelStyle: TextStyle(
+              color: Color(0xFFD6F6F3),
+              fontFamily: 'Regular',
+              fontSize: 20,
+            ),
           ),
           CurvedNavigationBarItem(
-            child: Icon(FontAwesomeIcons.userGraduate,color: Color(0xFFD6F6F3), size: 32),
-            label: 'ACADEMICO',
-            labelStyle: TextStyle(color: Color(0xFFD6F6F3)),
+            child: Icon(FontAwesomeIcons.userGraduate, color: Color(0xFFD6F6F3), size: 32),
+            label: 'Academico',
+            labelStyle: TextStyle(
+              color: Color(0xFFD6F6F3),
+              fontFamily: 'Regular',
+              fontSize: 20,
+            ),
           ),
           CurvedNavigationBarItem(
-            child: Icon(FontAwesomeIcons.bullseye, color: Color(0xFFD6F6F3), size:32),
-            label: 'HOOBIES',
-            labelStyle: TextStyle(color: Color(0xFFD6F6F3)),
+            child: Icon(FontAwesomeIcons.bullseye, color: Color(0xFFD6F6F3), size: 32),
+            label: 'Hoobies',
+            labelStyle: TextStyle(
+              color: Color(0xFFD6F6F3),
+              fontFamily: 'Regular',
+              fontSize: 20,
+            ),
           ),
         ],
       ),
     );
   }
 }
-//propiedades del fondo
+
+
+
+
 class _FondoEstatico extends StatelessWidget {
   const _FondoEstatico();
 
@@ -123,13 +166,35 @@ class _FondoEstatico extends StatelessWidget {
               color: const Color(0xFF1B2A47),
             ),
           ),
+          
+          const Positioned(
+            top: 29, 
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Text(
+                'PORTAFOLIO',
+                style: TextStyle(
+                  fontFamily: 'Regular',
+                  fontSize: 31,
+                  letterSpacing: 7,
+                  color: Color(0xFFD6F6F3), 
+                ),
+              ),
+            ),
+          ),
+
+
+
+
+
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Image.asset(
                 'assets/gris.png',
-                height: 300,
+                height: 310,
               ),
             ),
           ),

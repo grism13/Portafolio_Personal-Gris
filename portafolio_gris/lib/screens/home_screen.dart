@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 365),
                 Stack(
                   clipBehavior: Clip.none,
-                   children: [
+                  children: [
                     Container(
                       width: double.infinity,
                       height: 900,
@@ -47,8 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: Column(
                         children: [
-                          const SizedBox(height: 80), 
-                          
+                          const SizedBox(height: 80),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -62,20 +61,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left: 100.0), 
+                                padding: const EdgeInsets.only(left: 100.0),
                                 child: const Text(
                                   'Martínez',
                                   style: TextStyle(
                                     fontFamily: 'Titulos',
                                     fontSize: 80,
                                     color: Color(0xFF1B2A47),
-                                    height: 1.5, 
+                                    height: 1.5,
                                   ),
                                 ),
                               ),
                             ],
                           ),
                           const SizedBox(height: 30),
+                          const _SeccionPerfil(),
+                          const SizedBox(height: 40),
                         ],
                       ),
                     ),
@@ -97,9 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-
-
-
       bottomNavigationBar: CurvedNavigationBar(
         index: _selectedIndex,
         backgroundColor: const Color(0xFFD6F6F3),
@@ -145,9 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-
-
-
 class _FondoEstatico extends StatelessWidget {
   const _FondoEstatico();
 
@@ -166,9 +161,8 @@ class _FondoEstatico extends StatelessWidget {
               color: const Color(0xFF1B2A47),
             ),
           ),
-          
           const Positioned(
-            top: 29, 
+            top: 29,
             left: 0,
             right: 0,
             child: Center(
@@ -178,16 +172,11 @@ class _FondoEstatico extends StatelessWidget {
                   fontFamily: 'Regular',
                   fontSize: 31,
                   letterSpacing: 7,
-                  color: Color(0xFFD6F6F3), 
+                  color: Color(0xFFD6F6F3),
                 ),
               ),
             ),
           ),
-
-
-
-
-
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -195,6 +184,228 @@ class _FondoEstatico extends StatelessWidget {
               child: Image.asset(
                 'assets/gris.png',
                 height: 310,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SeccionPerfil extends StatelessWidget {
+  const _SeccionPerfil();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF1B2A47),
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.15),
+                            blurRadius: 8,
+                            offset: const Offset(3, 4),
+                          )
+                        ]
+                      ),
+                      child: Row(
+                        children: [
+                          const CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 40,
+                          ),
+                          const SizedBox(width: 10),
+                          const Expanded(
+                            child: Text(
+                              'Hola, soy Gris!',
+                              style: TextStyle(
+                                fontFamily: 'Regular',
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 25,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    Container(
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF4A5A75),
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.5),
+                            blurRadius: 8,
+                            offset: const Offset(3, 4),
+                          )
+                        ]
+                      ),
+                      child: Column(
+                        children: [
+                          const Text(
+                            'Estudiante de Ing. de Sistemas',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Regular',
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/logo_unimar.png',
+                                height: 38,
+                                color: Color(0xFFD6F6F3),
+                              ),
+                              const SizedBox(width: 8),
+                              const Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Universidad de Margarita',
+                                      style: TextStyle(
+                                        fontFamily: 'Regular',
+                                        color: Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 19,
+                                        height: 1.1,
+                                      ),
+                                    ),
+                                    Text(
+                                      '2024-Actualmente',
+                                      style: TextStyle(
+                                        fontFamily: 'Regular',
+                                        color: Color.fromARGB(217, 255, 255, 255),
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 15),
+              Expanded(
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: SizedBox(
+                        height: 140,
+                        width: 200,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Image.asset('assets/nube_title.png'),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 8.0, right: 4.0),
+                              child: Text(
+                                '¿Quien soy?',
+                                style: TextStyle(
+                                  fontFamily: 'Titulos',
+                                  color: Color(0xFF1B2A47),
+                                  fontSize: 40,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF00ACC1),
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.15),
+                            blurRadius: 8,
+                            offset: const Offset(3, 4),
+                          )
+                        ]
+                      ),
+                      child: const Column(
+                        children: [
+                          Text(
+                            '18 años',
+                            style: TextStyle(
+                              fontFamily: 'Regular',
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 1),
+                          Text(
+                            'Isla de Margarita, Venezuela',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Regular',
+                              color: Colors.white,
+                              fontSize: 18,
+                              height: 1.1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 30),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            decoration: BoxDecoration(
+              color: const Color(0xFF00ACC1),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.5),
+                  blurRadius: 10,
+                  offset: const Offset(3, 4),
+                )
+              ]
+            ),
+            child: const Text(
+              'Desarrolladora en formación con un interés especial en el diseño UI/UX',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Regular',
+                color: Colors.white,
+                fontSize: 25, 
+                fontWeight: FontWeight.bold,
+                height: 1.2,
               ),
             ),
           ),

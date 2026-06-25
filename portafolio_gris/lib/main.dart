@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart'; 
+import 'routes/app_routes.dart';
 
 void main() => runApp(const MiPortafolioApp());
 
@@ -8,10 +8,11 @@ class MiPortafolioApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Portafolio Gris',
-      home: HomeScreen(), 
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
     );
   }
 }

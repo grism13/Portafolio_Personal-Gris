@@ -16,8 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   font_awesome_flutter: ^10.7.0
   curved_labeled_navigation_bar: ^2.0.6
-
-  
+  card_swiper: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +33,23 @@ flutter:
     - assets/gris_sonriendo.png
     - assets/logo_unimar.png
     - assets/nube_title.png
+    - assets/gris_academico.png
+    - assets/affinity.png
+    - assets/bdd.png
+    - assets/c.png
+    - assets/cam.png
+    - assets/codigo.png
+    - assets/diseño.png
+    - assets/excel.png
+    - assets/figma.png
+    - assets/flutter.png
+    - assets/gemini.png
+    - assets/gris_asoma.png
+    - assets/planta.png
+    - assets/ps.png
+    - assets/py.png
+    - assets/vs_code.png
+    - assets/yiju.png
 
 
   fonts:

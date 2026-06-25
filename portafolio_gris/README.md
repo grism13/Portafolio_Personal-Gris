@@ -51,3 +51,8 @@ Pinterest
 
 - **Maquetacion de interfaz**: Canva (No me juzguen, fue por comodidad de exportar los png)
 
+
+
+Luchando con la pantalla del perfil, lo academico y hoobies (Nadie me manda a enfermarme)
+
+Por fin pude terminar la estructura que queria, ya esta todo planteado, faltarian las imagenes y su descripcion

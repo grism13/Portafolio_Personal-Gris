@@ -4,6 +4,17 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'contact_screen.dart';
+
+class CardOption {
+  final String imagen;
+  final String descripcion;
+
+  const CardOption({
+    required this.imagen,
+    required this.descripcion,
+  });
+}
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,6 +31,33 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       extendBody: true,
       backgroundColor: const Color.fromARGB(255, 54, 150, 174),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF1B2A47),
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          'PORTAFOLIO',
+          style: TextStyle(
+            fontFamily: 'Regular',
+            fontSize: 26,
+            letterSpacing: 5,
+            color: Color(0xFFD6F6F3),
+          ),
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            FontAwesomeIcons.phoneVolume,
+            color: Color(0xFFD6F6F3),
+            size: 28,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ContactScreen()),
+            );
+          },
+        ),
+      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
@@ -101,22 +139,6 @@ class _FondoEstatico extends StatelessWidget {
               width: double.infinity,
               height: 250,
               color: const Color(0xFF1B2A47),
-            ),
-          ),
-          const Positioned(
-            top: 29,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Text(
-                'PORTAFOLIO',
-                style: TextStyle(
-                  fontFamily: 'Regular',
-                  fontSize: 31,
-                  letterSpacing: 7,
-                  color: Color(0xFFD6F6F3),
-                ),
-              ),
             ),
           ),
           Align(
@@ -372,17 +394,22 @@ class _SeccionPerfil extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 children: [
-                  const SizedBox(width: 190),
-                  const Text(
-                    'Perfil',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Titulos',
-                      color: Color(0xFF1B2A47),
-                      fontSize: 75,
-                      height: 1.0,
+                  SizedBox(width: 100),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Perfil',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Titulos',
+                          color: Color(0xFF1B2A47),
+                          fontSize: 75,
+                          height: 1.0,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -443,7 +470,7 @@ class _SeccionPerfil extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(width: 55),
+                  const SizedBox(width: 20),
                   Expanded(
                     flex: 1,
                     child: Column(
@@ -539,24 +566,27 @@ class _PerfilView extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Grisangely',
-                              style: TextStyle(
-                                fontFamily: 'Titulos',
-                                fontSize: 100,
-                                color: Color(0xFF1B2A47),
-                                height: 0.3,
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              child: Text(
+                                'Grisangely',
+                                style: TextStyle(
+                                  fontFamily: 'Titulos',
+                                  fontSize: 100,
+                                  color: Color(0xFF1B2A47),
+                                  height: 0.8,
+                                ),
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 100.0),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60.0, right: 20),
                               child: Text(
                                 'Martínez',
                                 style: TextStyle(
                                   fontFamily: 'Titulos',
                                   fontSize: 80,
                                   color: Color(0xFF1B2A47),
-                                  height: 1.5,
+                                  height: 1.0,
                                 ),
                               ),
                             ),
@@ -586,8 +616,46 @@ class _PerfilView extends StatelessWidget {
   }
 }
 
-class _AcademicoView extends StatelessWidget {
+class _AcademicoView extends StatefulWidget {
   const _AcademicoView();
+
+  @override
+  State<_AcademicoView> createState() => _AcademicoViewState();
+}
+
+class _AcademicoViewState extends State<_AcademicoView> {
+  int _currentIndex = 0;
+
+  final List<CardOption> _proyectos = const [
+    CardOption(
+      imagen: 'assets/EXPERIENCIA_  Diseño de proyecto de ciencias.png',
+      descripcion: 'EXPERIENCIA_  Diseño de proyecto de ciencias',
+    ),
+    CardOption(
+      imagen: 'assets/EXPERIENCIA_ Proyectos de electronica.png',
+      descripcion: 'EXPERIENCIA_ Proyectos de electronica',
+    ),
+    CardOption(
+      imagen: 'assets/PROYECTO_  DoFind _ Sistema de Servicios Domésticos a domicilio.png',
+      descripcion: 'PROYECTO_  DoFind _ Sistema de Servicios Domésticos a domicilio',
+    ),
+    CardOption(
+      imagen: 'assets/PROYECTO_  UnimArcade_ Juego basado en la carrera de Ingenieria de Sistemas Unimar.png',
+      descripcion: 'PROYECTO_  UnimArcade_ Juego basado en la carrera de Ingenieria de Sistemas Unimar',
+    ),
+    CardOption(
+      imagen: 'assets/PROYECTO_ Juego de deciciones  ¨Salvando al bastardo¨ en phyton.png',
+      descripcion: 'PROYECTO_ Juego de deciciones  ¨Salvando al bastardo¨ en phyton',
+    ),
+    CardOption(
+      imagen: 'assets/PROYECTO_ La Gamificacion como herramienta pedagógica en el área de las matemáticas.png',
+      descripcion: 'PROYECTO_ La Gamificacion como herramienta pedagógica en el área de las matemáticas',
+    ),
+    CardOption(
+      imagen: 'assets/PROYECTO_ Organizador de Archivos hecho con phyton.png',
+      descripcion: 'PROYECTO_ Organizador de Archivos hecho con phyton',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -602,7 +670,6 @@ class _AcademicoView extends StatelessWidget {
           children: [
             const SizedBox(height: 60),
             SizedBox(
-              // EDITAR TAMAÑO AQUI: Altura del área del encabezado
               height: 250,
               child: Stack(
                 clipBehavior: Clip.none,
@@ -610,7 +677,7 @@ class _AcademicoView extends StatelessWidget {
                 children: [
                   const Positioned(
                     top: 60,
-                    left: 50,
+                    left: 20,
                     child: Text(
                       'CONOCE MI RECORRIDO',
                       style: TextStyle(
@@ -623,14 +690,14 @@ class _AcademicoView extends StatelessWidget {
                   ),
                   Positioned(
                     top: -15,
-                    right: 60,
+                    right: 20,
                     child: Image.asset('assets/gris_academico.png', height: 125),
                   ),
                   Positioned(
                     top: 100,
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 20),
-                      padding: const EdgeInsets.symmetric(horizontal: 55),
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
                       decoration: BoxDecoration(
                         color: const Color(0xFF00ACC1),
                         borderRadius: BorderRadius.circular(15),
@@ -642,7 +709,7 @@ class _AcademicoView extends StatelessWidget {
                         'Académico',
                         style: TextStyle(
                           fontFamily: 'Titulos',
-                          fontSize: 110,
+                          fontSize: 100,
                           color: Color(0xFFD6F6F3),
                         ),
                       ),
@@ -676,34 +743,35 @@ class _AcademicoView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Swiper(
-                            itemCount: 3, // cantidad de proyectos
+                            itemCount: _proyectos.length, 
                             viewportFraction: 0.8,
                             scale: 0.9,
+                            onIndexChanged: (index) {
+                              setState(() {
+                                _currentIndex = index;
+                              });
+                            },
                             itemBuilder: (BuildContext context, int index) {
                               return Container(
                                 margin: const EdgeInsets.symmetric(vertical: 10),
                                 decoration: BoxDecoration(
                                   color: Colors.white24,
                                   borderRadius: BorderRadius.circular(15),
-                                ),
-                                alignment: Alignment.center,
-                                child: const Text(
-                                  '(Aqui va la card_swiper)',
-                                  style: TextStyle(
-                                    fontFamily: 'Regular',
-                                    fontSize: 20,
-                                    color: Colors.white,
+                                  image: DecorationImage(
+                                    image: AssetImage(_proyectos[index].imagen),
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               );
                             },
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 5.0),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 5.0, left: 10, right: 10),
                           child: Text(
-                            '(pequeño subtitulo que le de nombre al hoobie dependiendo de la foto)',
-                            style: TextStyle(
+                            _proyectos[_currentIndex].descripcion,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
                               fontFamily: 'Regular',
                               color: Color(0xFFD6F6F3),
                               fontSize: 14,
@@ -715,7 +783,7 @@ class _AcademicoView extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'PROYECTOS EN EL AREA DE PROGRAMACION',
+                    'PROYECTOS EN EL AREA ACADEMICA',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Regular',
@@ -745,15 +813,15 @@ class _AcademicoView extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   Positioned(
-                    left: 12,
+                    left: 5,
                     bottom: 0,
                     child: Image.asset('assets/gris_asoma.png', height: 170),
                   ),
                   Positioned(
-                    right: 20,
+                    right: 15,
                     top: 11,
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.65,
+                      width: 260,
                       height: 150,
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
@@ -763,18 +831,24 @@ class _AcademicoView extends StatelessWidget {
                           BoxShadow(color: Colors.black26, blurRadius: 5, offset: Offset(4, 4)),
                         ],
                       ),
-                      child: Wrap(
-                        spacing: 15,
-                        runSpacing: 15,
-                        alignment: WrapAlignment.center,
+                      child: Table(
                         children: [
-                          Image.asset('assets/excel.png', height: 40),
-                          Image.asset('assets/vs_code.png', height: 40),
-                          Image.asset('assets/ps.png', height: 40),
-                          Image.asset('assets/figma.png', height: 40),
-                          Image.asset('assets/affinity.png', height: 40),
-                          Image.asset('assets/gemini.png', height: 40),
-                          const Icon(FontAwesomeIcons.github, color: Colors.white, size: 40),
+                          TableRow(
+                            children: [
+                              Image.asset('assets/excel.png', height: 40),
+                              Image.asset('assets/vs_code.png', height: 40),
+                              Image.asset('assets/ps.png', height: 40),
+                              Image.asset('assets/figma.png', height: 40),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Image.asset('assets/affinity.png', height: 40),
+                              Image.asset('assets/gemini.png', height: 40),
+                              const Icon(FontAwesomeIcons.github, color: Colors.white, size: 40),
+                              const SizedBox(),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -797,7 +871,7 @@ class _AcademicoView extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(142, 0, 171, 193),
+                color: const Color.fromARGB(194, 0, 171, 193),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: const [
                   BoxShadow(color: Colors.black26, blurRadius: 5, offset: Offset(4, 4)),
@@ -824,8 +898,50 @@ class _AcademicoView extends StatelessWidget {
 }
 
 
-class _HobbiesView extends StatelessWidget {
+class _HobbiesView extends StatefulWidget {
   const _HobbiesView();
+
+  @override
+  State<_HobbiesView> createState() => _HobbiesViewState();
+}
+
+class _HobbiesViewState extends State<_HobbiesView> {
+  int _currentIndex = 0;
+
+  final List<CardOption> _hobbies = const [
+    CardOption(
+      imagen: 'assets/HOOBIE_ Hacer manualidades.png',
+      descripcion: 'HOOBIEHacer manualidades',
+    ),
+    CardOption(
+      imagen: 'assets/HOOBIE_ Jugar Videojuegos.png',
+      descripcion: 'HOOBIE_ Jugar Videojuegos',
+    ),
+    CardOption(
+      imagen: 'assets/HOOBIE_ Tomar fotos a todo.png',
+      descripcion: 'HOOBIE_ Tomar fotos a todo',
+    ),
+    CardOption(
+      imagen: 'assets/ME GUSTA_ Dibujar cuando me aburro en una clase.png',
+      descripcion: 'ME GUSTA_ Dibujar cuando me aburro en una clase',
+    ),
+    CardOption(
+      imagen: 'assets/ME GUSTA_ Hacer Galletas.png',
+      descripcion: 'ME GUSTA_ Hacer Galletas',
+    ),
+    CardOption(
+      imagen: 'assets/ME GUSTA_ Los pequeños detalles hacia otros.png',
+      descripcion: 'ME GUSTA_ Los pequeños detalles hacia otros',
+    ),
+    CardOption(
+      imagen: 'assets/ME GUSTA_ Salir a comer.png',
+      descripcion: 'ME GUSTA_ Salir a comer',
+    ),
+    CardOption(
+      imagen: 'assets/ME GUSTA_ Tomar fotos a paisajes y atardeceres.png',
+      descripcion: 'ME GUSTA_ Tomar fotos a paisajes y atardeceres',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -846,7 +962,7 @@ class _HobbiesView extends StatelessWidget {
                 children: [
                   const Positioned(
                     top: 60,
-                    left: 40,
+                    left: 20,
                     child: Text(
                       '¿QUE ME GUSTA HACER?',
                       style: TextStyle(
@@ -859,13 +975,13 @@ class _HobbiesView extends StatelessWidget {
                   ),
                   Positioned(
                     top: -10,
-                    right: 60,
+                    right: 20,
                     child: Image.asset('assets/gris_cam.png', height: 120),
                   ),
                   Positioned(
                     top: 100,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 95),
+                      padding: const EdgeInsets.symmetric(horizontal: 60),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 14, 89, 130),
                         borderRadius: BorderRadius.circular(15),
@@ -901,7 +1017,8 @@ class _HobbiesView extends StatelessWidget {
                     height: 350,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white54, width: 1),
+                      border: Border.all(color: Colors.white, width: 1),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     alignment: Alignment.center,
                     child: Column(
@@ -909,37 +1026,38 @@ class _HobbiesView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Swiper(
-                            itemCount: 3, //cantidad de hobbies
+                            itemCount: _hobbies.length,
                             viewportFraction: 0.8,
                             scale: 0.9,
+                            onIndexChanged: (index) {
+                              setState(() {
+                                _currentIndex = index;
+                              });
+                            },
                             itemBuilder: (BuildContext context, int index) {
                               return Container(
                                 margin: const EdgeInsets.symmetric(vertical: 10),
                                 decoration: BoxDecoration(
                                   color: Colors.white24,
                                   borderRadius: BorderRadius.circular(15),
-                                ),
-                                alignment: Alignment.center,
-                                child: const Text(
-                                  '(aqui va la foto del hobby)',
-                                  style: TextStyle(
-                                    fontFamily: 'Regular',
-                                    fontSize: 18,
-                                    color: Colors.white,
+                                  image: DecorationImage(
+                                    image: AssetImage(_hobbies[index].imagen),
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               );
                             },
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0, left: 10, right: 10),
                           child: Text(
-                            '(pequeño subtitulo que le de nombre al hoobie dependiendo de la foto)',
-                            style: TextStyle(
+                            _hobbies[_currentIndex].descripcion,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
                               fontFamily: 'Regular',
                               color: Color(0xFFD6F6F3),
-                              fontSize: 14,
+                              fontSize: 16,
                             ),
                           ),
                         ),
@@ -975,10 +1093,10 @@ class _HobbiesView extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   Positioned(
-                    left: 30,
+                    left: 20,
                     top: 0,
                     child: Container(
-                      width: 270,
+                      width: 220,
                       height: 110,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
@@ -991,17 +1109,17 @@ class _HobbiesView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset('assets/diseño.png', height: 80),
-                          Image.asset('assets/codigo.png', height: 80),
+                          Expanded(child: Image.asset('assets/diseño.png', height: 90)),
+                          Expanded(child: Image.asset('assets/codigo.png', height: 90)),
                         ],
                       ),
                     ),
                   ),
                   Positioned(
-                    right: 30,
+                    right: 20,
                     top: 100,
                     child: Container(
-                      width: 270,
+                      width: 220,
                       height: 110,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
@@ -1014,8 +1132,8 @@ class _HobbiesView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset('assets/cam.png', height: 80),
-                          Image.asset('assets/planta.png', height: 80),
+                          Expanded(child: Image.asset('assets/cam.png', height: 80)),
+                          Expanded(child: Image.asset('assets/planta.png', height: 80)),
                         ],
                       ),
                     ),

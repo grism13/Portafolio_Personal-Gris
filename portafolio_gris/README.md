@@ -52,7 +52,14 @@ Pinterest
 - **Maquetacion de interfaz**: Canva (No me juzguen, fue por comodidad de exportar los png)
 
 
+Reporte 1:
 
 Luchando con la pantalla del perfil, lo academico y hoobies (Nadie me manda a enfermarme)
 
+Reporte 2:
+
 Por fin pude terminar la estructura que queria, ya esta todo planteado, faltarian las imagenes y su descripcion
+
+Reporte ultimo dia:
+
+Tuve que borrar, añadir, cambiar y rediseñar casi todo el codigo, no he dormido, pero los resultados son lo que esperaba y amé el proceso, no sabia lo dificil que era entender como colocar las imagenes en la card_swiper, añadi la pantalla de contacto y puedo anunciar por fin que es el ultimo commit (Estoy cansada jefe)

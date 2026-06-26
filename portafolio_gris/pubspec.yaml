@@ -49,7 +49,23 @@ flutter:
     - assets/ps.png
     - assets/py.png
     - assets/vs_code.png
-    - assets/yiju.png
+    - assets/firma_autor.png
+    - assets/gris_tlfn.png
+    - assets/EXPERIENCIA_  Diseño de proyecto de ciencias.png
+    - assets/EXPERIENCIA_ Proyectos de electronica.png
+    - assets/PROYECTO_  DoFind _ Sistema de Servicios Domésticos a domicilio.png
+    - assets/PROYECTO_  UnimArcade_ Juego basado en la carrera de Ingenieria de Sistemas Unimar.png
+    - assets/PROYECTO_ Juego de deciciones  ¨Salvando al bastardo¨ en phyton.png
+    - assets/PROYECTO_ La Gamificacion como herramienta pedagógica en el área de las matemáticas.png
+    - assets/PROYECTO_ Organizador de Archivos hecho con phyton.png
+    - assets/HOOBIE_ Hacer manualidades.png
+    - assets/HOOBIE_ Jugar Videojuegos.png
+    - assets/HOOBIE_ Tomar fotos a todo.png
+    - assets/ME GUSTA_ Dibujar cuando me aburro en una clase.png
+    - assets/ME GUSTA_ Hacer Galletas.png
+    - assets/ME GUSTA_ Los pequeños detalles hacia otros.png
+    - assets/ME GUSTA_ Salir a comer.png
+    - assets/ME GUSTA_ Tomar fotos a paisajes y atardeceres.png
 
 
   fonts:
